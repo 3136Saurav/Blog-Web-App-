@@ -7,8 +7,9 @@ const e = require('express')
 const expressSanitizer = require('express-sanitizer')
 app = express()
 
+console.log(process.env.DATABASEURL)
 const CONNECTION_URI = process.env.DATABASEURL || "mongodb://localhost/blog_app_1" 
-// console.log(CONNECTION_URI)
+
 
 mongoose.connect(CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const blogSchema = new mongoose.Schema({
