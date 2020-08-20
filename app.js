@@ -9,7 +9,6 @@ app = express()
 
 const CONNECTION_URI = process.env.DATABASEURL || "mongodb://localhost/blog_app_1" 
 // console.log(CONNECTION_URI)
-// const CONNECTION_URI = "mongodb+srv://blog_user:PXHYurd0aXu2njEQ@cluster0.1xfe7.mongodb.net/<dbname>?retryWrites=true&w=majority" 
 
 mongoose.connect(CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const blogSchema = new mongoose.Schema({
