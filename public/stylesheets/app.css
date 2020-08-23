@@ -25,3 +25,11 @@ i .icon {
 #item3:hover {
     color: white;
 }
+
+#item4 {
+    float: left;
+}
+
+#item4:hover {
+    color: white;
+}

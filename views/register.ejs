@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+<div class="ui main text container segment">
+    <div class="ui huge header">Sign Up</div>
+        <form action="/register" method="POST" class="ui form">
+            <div class="ui field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter Username" required>
+            </div>
+            <div class="ui field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter Password" required>
+            </div>
+            <input class="ui green inverted big button" type="submit" value="Sign Up">
+        </form>
+</div>
+
+<%- include('./partials/footer.ejs') %>
