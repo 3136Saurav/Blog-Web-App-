@@ -22,32 +22,32 @@ var data = [
 
 function seedDB() {
     Blog.remove({}, (err) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("Removed Blog!")
-            data.forEach((seed) => {
-                Blog.create(seed, (err, blog) => {
-                    if (err) {
-                        console.log(err)
-                    } else {
-                        console.log("Added a Blog!")
-                        Comment.create({
-                            text: "Wohoo this is my first comment!",
-                            author: "Gary Vaynerchuk"
-                        }, (err, comment) => {
-                            if (err) {
-                                console.log(err)
-                            } else {
-                                blog.comments.push(comment)
-                                blog.save()
-                                console.log("Added a comment!")
-                            }
-                        })
-                    }
-                })
-            })
-        }
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         console.log("Removed Blog!")
+    //         data.forEach((seed) => {
+    //             Blog.create(seed, (err, blog) => {
+    //                 if (err) {
+    //                     console.log(err)
+    //                 } else {
+    //                     console.log("Added a Blog!")
+    //                     Comment.create({
+    //                         text: "Wohoo this is my first comment!",
+    //                         author: "Gary Vaynerchuk"
+    //                     }, (err, comment) => {
+    //                         if (err) {
+    //                             console.log(err)
+    //                         } else {
+    //                             blog.comments.push(comment)
+    //                             blog.save()
+    //                             console.log("Added a comment!")
+    //                         }
+    //                     })
+    //                 }
+    //             })
+    //         })
+    //     }
     })
 }
 

@@ -11,15 +11,39 @@
 <body>
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <div class="header item"><a id="item1" href="/blogs"><i class="pencil alternate icon"></i>Blog Site</a></div>
+            <div class="header item"><a id="item1" href="/"><i class="pencil alternate icon"></i>Blog Site</a></div>
             <a id="item2" href="/blogs" class="item">Home</a>
             <% if(!currentUser) { %>    
                 <a href="/register" class="item">Sign Up</a>
                 <a href="/login" class="item">Login</a>
             <% } else { %>
-                <a id="item3" href="/blogs/new" class="item">New Post</a>
                 <a href="#" class="item">Signed in as <%= currentUser.username %></a>
                 <a id="item4" href="/logout" class="item">Logout</a>
             <% } %>
+            <a id="item3" href="/blogs/new" class="item">New Post</a>
         </div>
     </div>
+    <br>
+    <br>
+    <% if(error && error.length > 0) { %>
+        <div class="ui container">
+        <br>
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                <%= error %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+        <div class="ui container">
+            <br>
+        <div class="ui positive message">
+            <i class="close icon"></i>
+            <div class="header">
+                <%= success %>
+            </div>
+          </div>
+        </div>   
+    <% } %>
