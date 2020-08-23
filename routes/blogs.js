@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
     res.render('blogs/new')
 })
 
-router.get('/:id',  (req, res) => {
+router.get('/:id', (req, res) => {
     Blog.findById(req.params.id).populate("comments").exec((err, foundBlog) => {
         if (err) {
             res.redirect('/blogs')
@@ -82,7 +82,6 @@ router.delete('/:id', checkBlogOwnership, async(req, res) => {
         res.redirect('/blogs')
     }
 })
-
 
 function checkBlogOwnership(req, res, next) {
     if (req.isAuthenticated()) {
