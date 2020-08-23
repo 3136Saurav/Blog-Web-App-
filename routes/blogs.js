@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/new', isLoggedIn, (req, res) => {
+router.get('/new', (req, res) => {
     res.render('blogs/new')
 })
 
-router.get('/:id', isLoggedIn, (req, res) => {
+router.get('/:id',  (req, res) => {
     Blog.findById(req.params.id).populate("comments").exec((err, foundBlog) => {
         if (err) {
             res.redirect('/blogs')
