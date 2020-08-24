@@ -8,10 +8,27 @@
             </div>
             <div class="ui field">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="password" id="loginPwd" name="password" placeholder="Enter Password" required>
+                <br>
+                <br>
+                <div class="ui checkbox">
+                    <input type="checkbox" onclick="myFunction()">
+                    <label>Show Password</label>
+                </div>
             </div>
             <input class="ui green inverted big button" type="submit" value="Login">
         </form>
 </div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("loginPwd");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 
 <%- include('./partials/footer.ejs') %>

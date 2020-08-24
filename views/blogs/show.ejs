@@ -4,12 +4,13 @@
     <div class = "ui huge header"><%= blog.title %></div>
         <div class="ui top attached">
             <div class="item">
-                <img class="ui image centered rounded" src="<%= blog.image %>">
+                <img class="ui image huge centered rounded" src="<%= blog.image %>">
                 <div class="meta">
                     <span>Created By: <em><%= blog.author.username %></em></span>
                     <br>
                     <span><%= blog.created.toDateString() %></span>
                 </div>
+                <br>
                 <div class="description">
                     <p><%- blog.body %></p>
                 </div>

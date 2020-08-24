@@ -6,7 +6,7 @@
         <div class="ui divided items">
             <% blogs.forEach((blog) => { %>
                 <div class="item">
-                    <div class="image">
+                    <div class="ui medium image">
                         <img src="<%= blog.image %>">
                     </div>
                     <div class="content">
@@ -15,7 +15,7 @@
                             <span><%= blog.created.toDateString() %></span>
                         </div>
                         <div class="description">
-                            <p><%- blog.body.substring(0, 100) %>...</p>
+                            <p><%- blog.body.substring(0, 150) %>...</p>
                         </div>
                         <div class="extra">
                             <a class="ui floated inverted violet button" href="/blogs/<%=blog._id%>">
